@@ -1,11 +1,16 @@
+import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class CipherTest {
     Cipher c;
+    String nullString = null;
+    String str = "test";
 
     @BeforeEach
     void setUp() {
@@ -21,6 +26,7 @@ class CipherTest {
     void encryptNotNullIfEmptyString() {
         assertNotNull(c.encrypt(-3, ""));
     }
+
     @Test
     void encryptPolishWord(){
         assertEquals("aąb",c.encrypt(3,"zźż"));
@@ -35,4 +41,17 @@ class CipherTest {
     void decryptThrowError() {
         assertNotNull(c.decrypt(3,"Mój test decryptowania"));
     }
+
+    @Test
+    void decryptNotNullIfEmptyString() {
+        assertNotNull(c.decrypt(-3, ""));
+    }
+
+    @Test
+    void cipherObjectIsNotNull() {
+        assertNotNull(c);
+    }
+    
+    @Test
+    void encryptedMessageIsNotNull() { assertNotNull(c.encrypt(3,"Test"));}
 }
