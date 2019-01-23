@@ -1,9 +1,7 @@
 # Cipher
-Author: Kamil Faliński
+__Author__: Kamil Faliński
 
-Simple Caesar cipher + JUnit
-
-Destiny: For encrypting and encrypting messages
+__Destiny__: For encrypting and encrypting messages
 
 __Next goals:__
 - [ ] More JUnit tests
