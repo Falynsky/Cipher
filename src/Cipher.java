@@ -2,7 +2,7 @@ public class Cipher {
 
     public Cipher(){}
 
-    public String encrypt(int offset, String message){
+    String encrypt(int offset, String message){
 
         StringBuilder encryptedMessage = new StringBuilder();
         StringBuilder str = new StringBuilder(message);
@@ -22,9 +22,8 @@ public class Cipher {
         return encryptedMessage.toString();
     }
 
-    public String decrypt(int offset, String message) {
+    String decrypt(int offset, String message) {
         int decryptedOffset = offset *(-1);
-       String encryptedText = encrypt(decryptedOffset,message);
-       return encryptedText;
+        return encrypt(decryptedOffset,message);
     }
 }

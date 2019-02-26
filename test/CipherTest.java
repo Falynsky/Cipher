@@ -1,10 +1,5 @@
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CipherTest {
@@ -51,7 +46,7 @@ class CipherTest {
     void cipherObjectIsNotNull() {
         assertNotNull(c);
     }
-    
+
     @Test
     void encryptedMessageIsNotNull() { assertNotNull(c.encrypt(3,"Test"));}
 }
